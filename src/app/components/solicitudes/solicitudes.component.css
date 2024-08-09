@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+.container-lg {
+  font-family: 'Nunito', sans-serif;
+  max-width: 1200px;
+}
+
+.main-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #eceff1;
+}
+
+.card-header {
+  background-color: #1b3039 !important;
+  color: #eceff1 !important;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  padding: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  min-width: 900px;
+}
+
+.table thead th {
+  background-color: #1b3039;
+  color: #eceff1;
+  border: none;
+  white-space: nowrap;
+  padding: 0.75rem;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+  padding: 0.5rem;
+  border-top: 1px solid #dee2e6;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table td input.form-control-sm {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  height: 30px;
+}
+
+.action-buttons {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons .btn {
+  margin-right: 10px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+}
+
+.action-buttons .btn:last-child {
+  margin-right: 0;
+}
+
+.action-buttons .bi {
+  font-size: 1.5rem;
+}
+
+.table tr.editing td {
+  padding: 0.25rem;
+}
+
+.table tr.editing .form-control-sm {
+  font-size: 0.8rem;
+}
+
+.table tr.editing .action-buttons .btn {
+  padding: 0.4rem 0.6rem;
+  font-size: 1.1rem;
+}
+
+.table tr.editing .action-buttons .bi {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 992px) {
+  .container-lg {
+    padding: 0 15px;
+  }
+  
+  .table td, .table th {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .table td input.form-control-sm {
+    padding: 0.2rem;
+    font-size: 0.75rem;
+    height: 25px;
+  }
+  
+  .btn-sm {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+.action-buttons {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons .btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.action-buttons .btn:last-child {
+  margin-right: 0;
+}
+
+.action-buttons .bi {
+  font-size: 1.2rem;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Para asegurar que los iconos sean blancos y visibles */
+.btn-warning .bi,
+.btn-danger .bi {
+  color: white;
+}
+
+/* Ajustes para modo de edición si es necesario */
+.table tr.editing .action-buttons .btn {
+  width: 36px;
+  height: 36px;
+}
+
+.table tr.editing .action-buttons .bi {
+  font-size: 1rem;
+}

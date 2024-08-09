@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Agregar Orden de Compra</h2>
+
+  <form (ngSubmit)="agregarOrdenCompra()" #ordenForm="ngForm">
+    <div class="form-group">
+      <label for="numeroOrden">Número de Orden</label>
+      <input type="text" class="form-control" id="numeroOrden" 
+             [(ngModel)]="nuevaOrdenCompra.numeroOrden" name="numeroOrden" required>
+    </div>
+
+    <div class="form-group">
+      <label for="proveedor">Proveedor</label>
+      <select class="form-control" id="proveedor" 
+              [(ngModel)]="nuevaOrdenCompra.proveedorId" name="proveedorId" required>
+        <option [ngValue]="0" disabled>Seleccione un proveedor</option>
+        <option *ngFor="let proveedor of proveedores" [ngValue]="proveedor.id">
+          {{proveedor.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="montoTotal">Monto Total</label>
+      <input type="number" class="form-control" id="montoTotal" 
+             [(ngModel)]="nuevaOrdenCompra.montoTotal" name="montoTotal" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaOrden">Fecha de Orden</label>
+      <input type="date" class="form-control" id="fechaOrden" 
+             [(ngModel)]="nuevaOrdenCompra.fechaOrden" name="fechaOrden" required>
+    </div>
+
+    <div class="form-group">
+      <label for="observaciones">Observaciones</label>
+      <textarea class="form-control" id="observaciones" 
+                [(ngModel)]="nuevaOrdenCompra.observaciones" name="observaciones">
+      </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!ordenForm.form.valid">
+      Agregar Orden de Compra
+    </button>
+  </form>
+
+ 
+
+  <p *ngIf="ordenesCompra.length === 0">No hay órdenes de compra para mostrar.</p>
+</div>

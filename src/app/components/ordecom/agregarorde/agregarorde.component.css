@@ -1,0 +1,116 @@
+.container-lg {
+    font-family: 'Nunito', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .main-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #eceff1;
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #1b3039 !important;
+    color: #eceff1 !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-header h2, .card-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-weight: 800;
+  }
+  
+  .card-header .btn {
+    margin-top: 1rem; /* Espacio adecuado entre el título y el botón */
+    align-self: flex-start; /* Alineación a la izquierda */
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #1b3039;
+    border-color: #1b3039;
+    color: #eceff1;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #9e9e9e;
+    border-color: #9e9e9e;
+  }
+  
+  .table {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 900px;
+  }
+  
+  .table thead th {
+    background-color: #1b3039;
+    color: #eceff1;
+    border: none;
+    white-space: nowrap;
+    padding: 0.75rem;
+  }
+  
+  .table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+    padding: 0.5rem;
+    border-top: 1px solid #dee2e6;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 992px) {
+    .container-lg {
+      padding: 0 15px;
+    }
+    
+    .table td, .table th {
+      padding: 0.25rem;
+      font-size: 0.8rem;
+    }
+    
+    .btn-sm {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.75rem;
+    }
+  }

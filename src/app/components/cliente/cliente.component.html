@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Lista de Clientes</h1>
+  
+  <div class="d-flex justify-content-center mb-4 flex-wrap">
+    <a routerLink="/ingrecli" class="btn btn-custom me-2 mb-2">Agregar Cliente</a>
+    <a routerLink="/edicli" class="btn btn-custom me-2 mb-2">Editar Cliente</a>
+    <a routerLink="/buscli" class="btn btn-custom me-2 mb-2">Buscar Cliente</a>
+    <a routerLink="/elicli" class="btn btn-custom mb-2">Eliminar Cliente</a>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Apellido</th>
+          <th>Nombre</th>
+          <th>Fecha de Ingreso</th>
+          <th>Número de Propiedades</th>
+          <th>Seleccionado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td data-label="ID">{{ cliente.id }}</td>
+          <td data-label="Apellido">{{ cliente.apellido }}</td>
+          <td data-label="Nombre">{{ cliente.nombre }}</td>
+          <td data-label="Fecha de Ingreso">{{ cliente.fechaIngreso }}</td>
+          <td data-label="Número de Propiedades">{{ cliente.numPropiedades }}</td>
+          <td data-label="Seleccionado">{{ cliente.seleccionado ? 'Sí' : 'No' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

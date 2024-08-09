@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Lista de Clientes</h2>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li *ngFor="let cliente of clientes" class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="client-name">{{ cliente.nombre }} {{ cliente.apellido }}</span>
+              <button (click)="deleteCliente(cliente.id)" class="btn btn-danger btn-sm">Eliminar</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

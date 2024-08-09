@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Buscar Propiedad</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="searchPropiedad()">
+        <div class="form-group mb-3">
+          <label for="propiedadId" class="form-label">ID de la Propiedad:</label>
+          <input 
+            type="number" 
+            id="propiedadId" 
+            [(ngModel)]="propiedadId" 
+            name="propiedadId" 
+            class="form-control" 
+            required>
+        </div>
+        <button type="submit" class="btn btn-custom">Buscar</button>
+      </form>
+    
+      <div *ngIf="propiedad" class="property-details mt-4">
+        <h3>Detalles de la Propiedad</h3>
+        <p><strong>ID:</strong> {{ propiedad.id }}</p>
+        <p><strong>Dirección:</strong> {{ propiedad.direccion }}</p>
+        <p><strong>Ciudad:</strong> {{ propiedad.ciudad }}</p>
+        <p><strong>Tipo:</strong> {{ propiedad.tipo }}</p>
+        <p><strong>Precio:</strong> {{ propiedad.precio | currency }}</p>
+        <p><strong>Propietario ID:</strong> {{ propiedad.propietarioId }}</p>
+        <p><strong>Disponible:</strong> {{ propiedad.disponible ? 'Sí' : 'No' }}</p>
+        <p><strong>Seleccionada:</strong> {{ propiedad.seleccionada ? 'Sí' : 'No' }}</p>
+      </div>
+    
+      <div *ngIf="error" class="mt-3">
+        <p class="alert alert-danger">Error: {{ error }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Gestión de Propiedades</h2>
+    </div>
+    <div class="card-body">
+      <div class="search-section mb-4">
+        <h3>Buscar Propiedad</h3>
+        <form (ngSubmit)="searchPropiedad()" class="search-form">
+          <div class="input-group">
+            <label for="searchId" class="input-group-text">ID de Propiedad:</label>
+            <input type="number" id="searchId" [(ngModel)]="searchId" name="searchId" class="form-control" required>
+            <button type="submit" class="btn btn-search">Buscar</button>
+          </div>
+        </form>
+      </div>
+      
+      <div *ngIf="propiedad" class="update-section">
+        <h3>Actualizar Propiedad</h3>
+        <form (ngSubmit)="askToUpdate()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="direccion" class="form-label">Dirección:</label>
+              <input type="text" id="direccion" [(ngModel)]="propiedad.direccion" name="direccion" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="ciudad" class="form-label">Ciudad:</label>
+              <input type="text" id="ciudad" [(ngModel)]="propiedad.ciudad" name="ciudad" class="form-control" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="tipo" class="form-label">Tipo:</label>
+              <input type="text" id="tipo" [(ngModel)]="propiedad.tipo" name="tipo" class="form-control" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="precio" class="form-label">Precio:</label>
+              <input type="number" id="precio" [(ngModel)]="propiedad.precio" name="precio" class="form-control" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="propietarioId" class="form-label">ID del Propietario:</label>
+              <input type="number" id="propietarioId" [(ngModel)]="propiedad.propietarioId" name="propietarioId" class="form-control" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <div class="form-check">
+                <input type="checkbox" id="disponible" [(ngModel)]="propiedad.disponible" name="disponible" class="form-check-input">
+                <label for="disponible" class="form-check-label">Disponible</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input type="checkbox" id="seleccionada" [(ngModel)]="propiedad.seleccionada" name="seleccionada" class="form-check-input">
+                <label for="seleccionada" class="form-check-label">Seleccionada</label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-update">Actualizar Propiedad</button>
+        </form>
+      </div>
+      
+      <div *ngIf="!propiedad && searchId" class="mt-4">
+        <p class="alert alert-info">Se encontró la propiedad con ID {{ searchId }}.</p>
+      </div>
+    </div>
+  </div>
+</div>

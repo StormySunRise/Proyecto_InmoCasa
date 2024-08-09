@@ -1,0 +1,60 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer h4 {
+    color: #fff;
+}
+
+.contact-list li, .social-icons li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.contact-list li i, .social-icons li a i {
+    margin-right: 10px;
+}
+
+.social-icons li a i {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icons li a i:hover {
+    color: #ff6f61;
+}
+
+.subscribe-form {
+    margin-top: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+    color: #ccc;
+}
+
+.subscribe-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    background-color: #e96050;
+}

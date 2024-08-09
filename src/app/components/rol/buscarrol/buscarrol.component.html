@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Buscar Rol</h2>
+    </div>
+    <div class="card-body">
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Formulario de búsqueda -->
+      <form (ngSubmit)="buscarRolPorId()">
+        <div class="form-group">
+          <label for="rolId" class="form-label">ID del Rol</label>
+          <input 
+            type="number" 
+            id="rolId" 
+            class="form-control" 
+            [(ngModel)]="id" 
+            name="rolId"
+            placeholder="Ingrese el ID del rol" 
+            required 
+          />
+        </div>
+        <button type="submit" class="btn btn-custom mt-3">Buscar</button>
+      </form>
+
+      <!-- Resultados de búsqueda -->
+      <div *ngIf="rol" class="mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Rol Detalles</h5>
+            <p class="card-text"><strong>ID:</strong> {{ rol.id }}</p>
+            <p class="card-text"><strong>Nombre:</strong> {{ rol.nombre }}</p>
+            <!-- Añadir otros campos según la estructura de Rol -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

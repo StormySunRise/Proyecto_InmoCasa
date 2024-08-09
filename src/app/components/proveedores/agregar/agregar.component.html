@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Formulario de Agregar Proveedor -->
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow-lg border-light">
+        <div class="card-header bg-gradient-primary text-white text-center">
+          <h4><i class="bi bi-person-plus"></i> Agregar Proveedor</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="agregarProveedor()" #proveedorForm="ngForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nombre" class="form-label"><i class="bi bi-person"></i> Nombre:</label>
+                <input type="text" id="nombre" [(ngModel)]="proveedor.nombre" name="nombre" class="form-control" placeholder="Nombre del proveedor" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email:</label>
+                <input type="email" id="email" [(ngModel)]="proveedor.email" name="email" class="form-control" placeholder="Correo electrónico" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="telefono" class="form-label"><i class="bi bi-telephone"></i> Teléfono:</label>
+                <input type="text" id="telefono" [(ngModel)]="proveedor.telefono" name="telefono" class="form-control" placeholder="Número de teléfono" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="direccion" class="form-label"><i class="bi bi-geo-alt"></i> Dirección:</label>
+                <input type="text" id="direccion" [(ngModel)]="proveedor.direccion" name="direccion" class="form-control" placeholder="Dirección completa" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cedula" class="form-label"><i class="bi bi-card-id"></i> Cédula:</label>
+                <input type="text" id="cedula" [(ngModel)]="proveedor.cedula" name="cedula" class="form-control" placeholder="Número de cédula" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="tipo" class="form-label"><i class="bi bi-tags"></i> Tipo:</label>
+                <select id="tipo" [(ngModel)]="proveedor.tipo" name="tipo" class="form-control" required>
+                  <option *ngFor="let tipo of tiposValidos" [value]="tipo">{{ tipo }}</option>
+                </select>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="descripcion" class="form-label"><i class="bi bi-info-circle"></i> Descripción:</label>
+                <textarea id="descripcion" [(ngModel)]="proveedor.descripcion" name="descripcion" class="form-control" rows="4" placeholder="Descripción opcional"></textarea>
+              </div>
+            </div>
+            <div class="text-center mb-3">
+              <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check"></i> Agregar Proveedor</button>
+            </div>
+            <div *ngIf="error" class="alert alert-danger text-center">
+              <i class="bi bi-exclamation-circle"></i> {{ error }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

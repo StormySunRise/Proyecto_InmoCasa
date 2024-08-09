@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card main-card">
+    <div class="card-header">
+      <h3>Agregar Nuevo Rol</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="rolForm" (ngSubmit)="agregarRol()">
+        <div class="form-group">
+          <label for="nombre" class="form-label">Nombre del Rol</label>
+          <input
+            type="text"
+            id="nombre"
+            formControlName="nombre"
+            class="form-control"
+            placeholder="Ingrese el nombre del rol"
+          />
+          <div *ngIf="rolForm.get('nombre')?.invalid && rolForm.get('nombre')?.touched" class="alert alert-danger mt-2">
+            El nombre del rol es obligatorio y debe tener al menos 2 caracteres.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-custom mt-3" [disabled]="rolForm.invalid">Agregar Rol</button>
+      </form>
+    </div>
+  </div>
+</div>

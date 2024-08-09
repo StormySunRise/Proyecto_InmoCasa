@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Agregar Verificación</h2>
+    <form [formGroup]="verificacionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="facturaId">ID de Factura:</label>
+        <input type="number" id="facturaId" formControlName="facturaId" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="fechaVerificacion">Fecha de Verificación:</label>
+        <input type="date" id="fechaVerificacion" formControlName="fechaVerificacion" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="resultado">Resultado:</label>
+        <input type="text" id="resultado" formControlName="resultado" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!verificacionForm.valid">Agregar Verificación</button>
+    </form>
+  </div>

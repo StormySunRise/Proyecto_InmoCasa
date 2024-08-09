@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2><i class="fas fa-search me-2"></i>Búsqueda de Proveedores</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onFilterChange()">
+        <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Nombre del proveedor" />
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="tipo" class="form-label">Tipo:</label>
+            <select id="tipo" [(ngModel)]="tipo" name="tipo" class="form-control">
+              <option value="">Seleccione un tipo</option>
+              <option *ngFor="let tipoValido of tiposValidos" [value]="tipoValido">
+                {{ tipoValido }}
+              </option>
+            </select>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Correo electrónico" />
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-custom">
+            <i class="fas fa-search me-2"></i>Buscar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card main-card mt-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let proveedor of proveedores">
+              <td>{{ proveedor.nombre }}</td>
+              <td><i class="fas fa-tag me-2"></i>{{ proveedor.tipo }}</td>
+              <td><i class="fas fa-envelope me-2"></i>{{ proveedor.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

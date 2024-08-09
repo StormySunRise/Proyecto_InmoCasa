@@ -1,0 +1,121 @@
+<div class="main-content slide-in-right">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <i class="fas fa-users-cog"></i> Panel de Administración
+            </div>    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">
+                            <i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="display-4">¡Bienvenido, Admin!</h1>
+                <p class="lead">Tu determinación es lo que nos lleva adelante.</p>
+            </div>
+        </div>
+
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-users fa-4x mb-3 icon-animation"></i>
+                        <h3>Proveedores</h3>
+                        <p>Agrega, edita o elimina proveedores de la base de datos.</p>
+                        <a routerLink="/proveedores/" class="btn btn-primary btn-lg btn-block">Administrar Proveedores</a>
+                    </div>
+                </div>
+        
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-shopping-cart fa-4x mb-3 icon-animation"></i>
+                        <h3 class="text-center">Órdenes de Compra</h3>
+                        <p class="text-center">Revisa y gestiona las órdenes de compra realizadas.</p>
+                        <a routerLink="/ordecom/" class="btn btn-primary btn-lg btn-block">Administrar Órdenes</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-file-invoice fa-4x mb-3 icon-animation"></i>
+                        <h3 class="text-center">Facturas</h3>
+                        <p class="text-center">Ingresa, modifica o elimina facturas de los proveedores.</p>
+                        <a routerLink="/factura/" class="btn btn-primary btn-lg btn-block">Administrar Facturas</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-money-check-alt fa-4x mb-3 icon-animation"></i>
+                        <h3 class="text-center">Verificación de Facturas</h3>
+                        <p class="text-center">Gestiona y procesa facturas realizadas</p>
+                        <a routerLink="/obteveri/" class="btn btn-primary btn-lg btn-block">Administrar Pagos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mb-4">Otras Funcionalidades</h2>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-users fa-4x mb-3 icon-animation"></i>
+                        <h3>Gestión de Usuarios</h3>
+                        <p>Administra cuentas de usuario y sus permisos de acceso.</p>
+                        <a routerLink="/usuarios" class="btn btn-primary btn-lg">Gestionar Usuarios</a>
+                        <br>
+                        <a routerLink="/rol" class="btn btn-primary btn-lg">Gestionar Roles</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="gray-box d-flex flex-column align-items-center">
+                        <i class="fas fa-chart-bar fa-4x mb-3 icon-animation"></i>
+                        <h3>Reportes</h3>
+                        <p>Genera y descarga informes detallados sobre diversas métricas.</p>
+                        <a routerLink="/reportes" class="btn btn-primary btn-lg btn-block">Ver Reportes</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="container mt-5">
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-6">
+                    <div class="gray-box card">
+                        <h3 class="card-title">Dejar Comentario y Valoración</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="comment">Comentario:</label>
+                                <textarea class="form-control" id="comment" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rating">Valoración:</label>
+                                <input type="number" class="form-control" id="rating" min="1" max="5">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Buscar y Editar Rol</h2>
+    </div>
+    <div class="card-body">
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+  
+      <!-- Formulario de búsqueda -->
+      <form (ngSubmit)="buscarRol()">
+        <div class="form-group">
+          <label for="rolId" class="form-label">ID del Rol</label>
+          <input type="number" id="rolId" [(ngModel)]="rolId" name="rolId" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-custom mt-3">Buscar Rol</button>
+      </form>
+  
+      <!-- Formulario de edición -->
+      <div *ngIf="rolToEdit" class="mt-4">
+        <h3>Editar Rol</h3>
+        <form (ngSubmit)="editarRol()">
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-custom mt-3">Actualizar Rol</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

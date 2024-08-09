@@ -1,0 +1,24 @@
+/* src/app/components/ingreusu/ingreusu.component.css */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn {
+  margin-top: 20px;
+}

@@ -1,0 +1,43 @@
+<div class="container main-card">
+  <div class="card-header">
+    <h2>Lista de Usuarios</h2>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table *ngIf="usuarios.length > 0" class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Cédula</th>
+            <th>Rol ID</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.cedula }}</td>
+            <td>{{ usuario.rolId }}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+              <!-- Puedes agregar más botones de acción aquí, como Editar -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="usuarios.length === 0">No hay usuarios para mostrar.</p>
+    </div>
+    <div class="mt-3">
+      <button class="btn btn-custom" [routerLink]="['/ingreusu']">Agregar Usuario</button>
+      <br>
+      <br>
+      <button class="btn btn-custom" [routerLink]="['/buscarusu']">Filtrar Usuarios</button>
+    </div>
+  </div>
+</div>

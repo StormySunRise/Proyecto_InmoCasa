@@ -1,0 +1,42 @@
+<h2>Lista de Propiedades</h2>
+
+<div *ngIf="error" class="alert alert-danger">
+  {{ error }}
+</div>
+
+<div class="container">
+  <table *ngIf="propiedades.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+        <th>Propietario ID</th>
+        <th>Disponible</th>
+        <th>Seleccionada</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let propiedad of propiedades">
+        <td>{{ propiedad.id }}</td>
+        <td>{{ propiedad.direccion }}</td>
+        <td>{{ propiedad.ciudad }}</td>
+        <td>{{ propiedad.tipo }}</td>
+        <td>{{ propiedad.precio | currency }}</td>
+        <td>{{ propiedad.propietarioId }}</td>
+        <td>{{ propiedad.disponible ? 'Sí' : 'No' }}</td>
+        <td>{{ propiedad.seleccionada ? 'Sí' : 'No' }}</td>
+        <td>
+          <button (click)="deletePropiedad(propiedad.id)" class="btn btn-danger btn-sm ms-2">Eliminar Propiedad</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="propiedades.length === 0 && !error" class="alert alert-info">
+    No hay propiedades disponibles.
+  </div>
+</div>

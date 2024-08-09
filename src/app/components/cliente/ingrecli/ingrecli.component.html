@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Crear Nuevo Cliente</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="crearCliente()">
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido:</label>
+              <input type="text" class="form-control" id="apellido" [(ngModel)]="nuevoCliente.apellido" name="apellido" required>
+            </div>
+          
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoCliente.nombre" name="nombre" required>
+            </div>
+          
+            <div class="mb-3">
+              <label for="fechaIngreso" class="form-label">Fecha de Ingreso:</label>
+              <input type="date" class="form-control" id="fechaIngreso" [(ngModel)]="nuevoCliente.fechaIngreso" name="fechaIngreso" required>
+            </div>
+          
+            <div class="mb-3">
+              <label for="numPropiedades" class="form-label">Número de Propiedades:</label>
+              <input type="number" class="form-control" id="numPropiedades" [(ngModel)]="nuevoCliente.numPropiedades" name="numPropiedades" required>
+            </div>
+          
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="seleccionado" [(ngModel)]="nuevoCliente.seleccionado" name="seleccionado">
+              <label class="form-check-label" for="seleccionado">Seleccionado</label>
+            </div>
+          
+            <button type="submit" class="btn btn-custom">Crear Cliente</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

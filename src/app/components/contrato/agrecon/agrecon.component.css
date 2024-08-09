@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+.container-lg {
+  font-family: 'Nunito', sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #eceff1;
+  padding: 1.5rem;
+}
+
+.card-header {
+  background-color: #1b3039 !important;
+  color: #eceff1 !important;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group .form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-sizing: border-box;
+}
+
+.form-group textarea.form-control {
+  height: auto;
+  resize: vertical;
+}
+
+.btn-primary {
+  background-color: #1b3039;
+  color: #eceff1;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+@media (max-width: 992px) {
+  .container-lg {
+    padding: 0 15px;
+  }
+  
+  .form-group .form-control {
+    font-size: 0.8rem;
+  }
+
+  .btn-primary {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

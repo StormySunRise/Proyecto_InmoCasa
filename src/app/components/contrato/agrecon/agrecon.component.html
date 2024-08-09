@@ -1,0 +1,47 @@
+<div class="container-lg">
+  <div class="main-card">
+    <div class="card-header">
+      <h2>Agregar Contrato</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #contratoForm="ngForm">
+        <div class="form-group">
+          <label for="solicitudId">Solicitud ID:</label>
+          <input type="number" id="solicitudId" name="solicitudId" [(ngModel)]="contrato.solicitudId" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="fechaInicio">Fecha Inicio:</label>
+          <input type="date" id="fechaInicio" name="fechaInicio" [(ngModel)]="contrato.fechaInicio" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="fechaFin">Fecha Fin:</label>
+          <input type="date" id="fechaFin" name="fechaFin" [(ngModel)]="contrato.fechaFin" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="monto">Monto:</label>
+          <input type="number" id="monto" name="monto" [(ngModel)]="contrato.monto" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" name="estado" [(ngModel)]="contrato.estado" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="terminos">Términos:</label>
+          <textarea id="terminos" name="terminos" [(ngModel)]="contrato.terminos" required class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="propiedadId">Propiedad ID:</label>
+          <input type="number" id="propiedadId" name="propiedadId" [(ngModel)]="contrato.propiedadId" required class="form-control">
+        </div>
+
+        <button type="submit" [disabled]="!contratoForm.form.valid" class="btn btn-primary">Crear Contrato</button>
+      </form>
+    </div>
+  </div>
+</div>

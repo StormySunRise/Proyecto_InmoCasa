@@ -1,0 +1,50 @@
+<div class="centered-container">
+    <form class="unlock-animation">
+
+      <div class="login-container">
+        <div class="login-icon">
+          <i class="fas fa-user-lock"></i>
+      </div>
+      <h2 class="login-title"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+      <div>
+          <div class="form-group">
+              <label for="username"><i class="fas fa-user icon-margin"></i><strong>Usuario o Correo Electrónico</strong></label>
+              <input type="text" id="username" name="username" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="passwordr">
+              <i class="fas fa-key icon-margin"></i><strong>Contraseña</strong></label>
+            <div class="input-group">
+              <input type="password" id="password" name="password" class="form-control">
+            </div>
+        </div>
+
+          <button type="submit"  routerLink="/principal" class="btn btn-primary btn-login"
+            (mouseenter)="onButtonMouseEnter('loginButton')"
+            (mouseleave)="onButtonMouseLeave('loginButton')"
+            (click)="onButtonClick('loginButton')">
+            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+          </button>
+        </div>
+        <br>
+        <div class="forgot-password">
+          <a href="#"><i class="fas fa-question-circle"></i> ¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="register-link">
+          <p>¿No tienes una cuenta? <a href="#"><i class="fas fa-user-plus"></i> Regístrate</a></p>
+        </div>
+  
+        <div class="login-divider">
+          <span>o ingresa con</span>
+      </div>
+      <div class="social-login">
+          <a href="#" class="google-login"><i class="fab fa-google"></i></a>
+          <a href="#" class="apple-login"><i class="fab fa-apple"></i></a>
+      </div>
+      </div>
+    </form>
+  </div>
+
+
+

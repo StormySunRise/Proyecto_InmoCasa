@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-13"> <!-- Cambiado de col-md-10 a col-md-12 para que ocupe todo el ancho disponible -->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0 text-center">Lista de Propiedades</h2>
+        </div>
+        <div class="card-body">
+          <!-- Mensaje de error -->
+          <div *ngIf="error" class="alert alert-danger">
+            {{ error }}
+          </div>
+
+          <!-- Tabla de propiedades -->
+          <div class="table-responsive" *ngIf="propiedades.length > 0">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Dirección</th>
+                  <th>Ciudad</th>
+                  <th>Tipo</th>
+                  <th>Precio</th>
+                  <th>Propietario ID</th>
+                  <th>Disponible</th>
+                  <th>Seleccionada</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let propiedad of propiedades">
+                  <td>{{ propiedad.id }}</td>
+                  <td>{{ propiedad.direccion }}</td>
+                  <td>{{ propiedad.ciudad }}</td>
+                  <td>{{ propiedad.tipo }}</td>
+                  <td>{{ propiedad.precio | currency }}</td>
+                  <td>{{ propiedad.propietarioId }}</td>
+                  <td>{{ propiedad.disponible ? 'Sí' : 'No' }}</td>
+                  <td>{{ propiedad.seleccionada ? 'Sí' : 'No' }}</td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button routerLink="/elipro" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Botones para las propiedades -->
+          <div class="text-center mt-4">
+            <div class="btn-group" role="group" aria-label="Botones de acciones">
+              <a routerLink="/ingrepropi" class="btn btn-custom btn-lg">Ingresar Propiedad</a>
+              <a routerLink="/buscpropi" class="btn btn-custom btn-lg">Buscar</a>
+              <a routerLink="/edipropi" class="btn btn-warning btn-lg">Editar</a>
+            </div>
+          </div>
+
+          <!-- Mensaje cuando no hay propiedades -->
+          <div *ngIf="propiedades.length === 0 && !error" class="alert alert-info mt-3">
+            No hay propiedades disponibles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

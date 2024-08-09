@@ -1,0 +1,53 @@
+.container {
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.card.main-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #eceff1;
+}
+
+.card-header {
+  background-color: #1b3039;
+  color: #eceff1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.5rem; /* Ajusta el tamaño del encabezado */
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.input-group-text {
+  background-color: #1b3039;
+  color: #eceff1;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger i {
+  margin-right: 0.5rem;
+}
+
+.alert-info {
+  background-color: #e9ecef;
+  color: #1b3039;
+}

@@ -1,0 +1,61 @@
+<div class="container-lg mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Listado de Solicitudes</h2>
+      <a class="btn btn-primary ml-3 mt-3" routerLink="/agresoli">Agregar Solicitud</a>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente ID</th>
+              <th>Fecha de Solicitud</th>
+              <th>Estado</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let solicitud of solicitudes" [class.editing]="solicitudEnEdicion?.id === solicitud.id">
+              <ng-container *ngIf="solicitudEnEdicion?.id !== solicitud.id; else editForm">
+                <td>{{ solicitud.id }}</td>
+                <td>{{ solicitud.clienteId }}</td>
+                <td>{{ solicitud.fechaSolicitud | date:'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ solicitud.estado }}</td>
+                <td>{{ solicitud.tipo }}</td>
+                <td>{{ solicitud.descripcion }}</td>
+                <td class="action-buttons">
+                  <button class="btn btn-sm btn-warning mr-1" (click)="editarSolicitud(solicitud)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" (click)="eliminarSolicitud(solicitud.id)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </ng-container>
+              <ng-template #editForm>
+                <td>{{ solicitudEnEdicion!.id }}</td>
+                <td><input [(ngModel)]="solicitudEnEdicion!.clienteId" class="form-control form-control-sm" type="number"></td>
+                <td><input [(ngModel)]="solicitudEnEdicion!.fechaSolicitud" class="form-control form-control-sm" type="datetime-local"></td>
+                <td><input [(ngModel)]="solicitudEnEdicion!.estado" class="form-control form-control-sm" type="text"></td>
+                <td><input [(ngModel)]="solicitudEnEdicion!.tipo" class="form-control form-control-sm" type="text"></td>
+                <td><input [(ngModel)]="solicitudEnEdicion!.descripcion" class="form-control form-control-sm" type="text"></td>
+                <td class="action-buttons">
+                  <button class="btn btn-sm btn-success mr-1" (click)="guardarEdicion()">
+                    <i class="bi bi-check"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" (click)="cancelarEdicion()">
+                    <i class="bi bi-x"></i>
+                  </button>
+                </td>
+              </ng-template>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

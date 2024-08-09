@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+body {
+  background-color: #f4f4f4;
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+h2 {
+  color: #1b3039;
+  font-weight: 800;
+}
+
+.btn-custom {
+  background-color: #1b3039;
+  color: #eceff1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #2c454f;
+  color: #ffffff;
+}
+
+.table-responsive {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #1b3039;
+  color: #eceff1;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .btn-custom {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+  
+  .table thead {
+    display: none;
+  }
+  
+  .table tr {
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid #1b3039;
+  }
+  
+  .table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+}

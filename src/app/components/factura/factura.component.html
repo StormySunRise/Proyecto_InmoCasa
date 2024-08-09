@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Facturas Ingresadas</h2>
+    </div>
+    <div class="card-body">
+      <!-- Mensaje de error -->
+      <div *ngIf="error" class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <span>Error: {{ error }}</span>
+      </div>
+
+      <!-- Mensaje cuando no hay facturas -->
+      <div *ngIf="!error && facturas.length === 0" class="alert alert-info d-flex align-items-center" role="alert">
+        <i class="fas fa-info-circle me-2"></i>
+        <span>No hay facturas disponibles.</span>
+      </div>
+
+      <!-- Tabla de facturas -->
+      <div *ngIf="facturas.length > 0" class="table-responsive mt-3">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identificador de Factura</th>
+              <th>Fecha de Emisión</th>
+              <th>Fecha de Vencimiento</th>
+              <th>Nombre del Proveedor</th>
+              <th>Acciones</th> <!-- Nueva columna para las acciones -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let factura of facturas">
+              <td>{{ factura.id }}</td>
+              <td>{{ factura.identificadorFactura }}</td>
+              <td>{{ factura.fechaEmision | date:'shortDate' }}</td>
+              <td>{{ factura.fechaVencimiento | date:'shortDate' }}</td>
+              <td>{{ factura.proveedorNombre }}</td>
+              <td>
+                <!-- Botón para eliminar -->
+                <button (click)="eliminarFactura(factura.id)" class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash"></i> Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a routerLink="/busfac" class="btn btn-custom">
+          <i class="fas fa-search me-2"></i>Buscar Factura
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

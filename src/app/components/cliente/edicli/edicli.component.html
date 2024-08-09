@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Editar Cliente</h2>
+        </div>
+        <div class="card-body">
+          <!-- Formulario de búsqueda -->
+          <div class="mb-3">
+            <label for="clienteId" class="form-label">ID del Cliente:</label>
+            <div class="input-group">
+              <input type="number" class="form-control" id="clienteId" [(ngModel)]="clienteId" name="clienteId" required>
+              <button (click)="buscarCliente()" class="btn btn-custom">Buscar Cliente</button>
+            </div>
+          </div>
+
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Formulario de edición -->
+          <form *ngIf="cliente" (ngSubmit)="onSubmit()" #clienteForm="ngForm" class="mt-4">
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido:</label>
+              <input type="text" class="form-control" id="apellido" [(ngModel)]="cliente.apellido" name="apellido" required>
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="fechaIngreso" class="form-label">Fecha de Ingreso:</label>
+              <input type="date" class="form-control" id="fechaIngreso" [(ngModel)]="cliente.fechaIngreso" name="fechaIngreso" required>
+            </div>
+            <div class="mb-3">
+              <label for="numPropiedades" class="form-label">Número de Propiedades:</label>
+              <input type="number" class="form-control" id="numPropiedades" [(ngModel)]="cliente.numPropiedades" name="numPropiedades" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="seleccionado" [(ngModel)]="cliente.seleccionado" name="seleccionado">
+              <label class="form-check-label" for="seleccionado">Seleccionado</label>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-custom" [disabled]="!clienteForm.form.valid">Actualizar</button>
+              <button type="button" class="btn btn-secondary" routerLink="/clientes">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container-lg mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Listado de Contratos</h2>
+      <a class="btn btn-primary ml-3 mt-3" routerLink="/agrecon">Agregar Contrato</a>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Solicitud ID</th>
+              <th>Monto</th>
+              <th>Términos</th>
+              <th>Propiedad ID</th>
+              <th>Acciones</th> <!-- Nueva columna para las acciones -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let contrato of contratos">
+              <td>{{ contrato.id }}</td>
+              <td>{{ contrato.solicitudId }}</td>
+              <td>{{ contrato.monto | currency }}</td>
+              <td>{{ contrato.terminos }}</td>
+              <td>{{ contrato.propiedadId }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteContrato(contrato.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Órdenes de Compra</h1>
+  
+  <form (ngSubmit)="onSubmit()" class="bg-light p-4 rounded shadow-sm">
+    <div class="form-group mb-3">
+      <label for="numeroOrden" class="form-label">Número de Orden:</label>
+      <input type="text" id="numeroOrden" [(ngModel)]="numeroOrden" name="numeroOrden" class="form-control">
+    </div>
+  
+    <div class="form-group mb-3">
+      <label for="nombreProveedor" class="form-label">Nombre del Proveedor:</label>
+      <input type="text" id="nombreProveedor" [(ngModel)]="nombreProveedor" name="nombreProveedor" class="form-control">
+    </div>
+  
+    <div class="form-group mb-3">
+      <label for="observaciones" class="form-label">Observaciones:</label>
+      <input type="text" id="observaciones" [(ngModel)]="observaciones" name="observaciones" class="form-control">
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+  
+  <table class="table table-hover table-bordered mt-4" *ngIf="ordenesCompra.length > 0">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Número de Orden</th>
+        <th>Nombre del Proveedor</th>
+        <th>Monto Total</th>
+        <th>Fecha de Orden</th>
+        <th>Observaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of ordenesCompra">
+        <td>{{ orden.id }}</td>
+        <td>{{ orden.numeroOrden }}</td>
+        <td>{{ orden.nombreProveedor }}</td>
+        <td>{{ orden.montoTotal | currency }}</td>
+        <td>{{ orden.fechaOrden | date }}</td>
+        <td>{{ orden.observaciones || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div *ngIf="ordenesCompra.length === 0" class="text-center mt-4">
+    <p class="text-muted">No hay órdenes de compra disponibles.</p>
+  </div>
+</div>

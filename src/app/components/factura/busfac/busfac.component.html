@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Buscar Factura</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="facturaForm" (ngSubmit)="buscarFactura()">
+        <div class="form-row align-items-center">
+          <div class="col-md-8">
+            <div class="d-flex align-items-center">
+              <label for="id" class="form-label">ID de la Factura:</label>
+              <input type="text" id="id" formControlName="id" class="form-control ms-2" placeholder="Ingrese el ID de la factura">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-custom w-100">
+              <i class="fas fa-search"></i> Buscar
+            </button>
+          </div>
+        </div>
+      </form>
+    
+      <div *ngIf="factura" class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Detalles de la Factura</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>ID:</strong> {{ factura.id }}</li>
+            <li class="list-group-item"><strong>Identificador de Factura:</strong> {{ factura.identificadorFactura }}</li>
+            <li class="list-group-item"><strong>Fecha de Emisión:</strong> {{ factura.fechaEmision | date:'yyyy-MM-dd' }}</li>
+            <li class="list-group-item"><strong>Fecha de Vencimiento:</strong> {{ factura.fechaVencimiento | date:'yyyy-MM-dd' }}</li>
+            <li class="list-group-item"><strong>Proveedor:</strong> {{ factura.proveedorNombre }}</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div *ngIf="error" class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        <span>Error: {{ error }}</span>
+      </div>
+    </div>
+  </div>
+</div>

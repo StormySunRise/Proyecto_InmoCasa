@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <div class="card main-card">
+    <div class="card-header">
+      <h2>Gestión de Proveedores</h2>
+    </div>
+    <div class="card-body">
+      <!-- Botones de acción -->
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <a routerLink="/agregar" class="btn btn-custom">
+          <i class="fas fa-plus me-2"></i>Agregar Proveedores
+        </a>
+        <a routerLink="/filprov" class="btn btn-custom">
+          <i class="fas fa-filter me-2"></i>Filtrar Proveedores
+        </a>
+        <a routerLink="/editarprov" class="btn btn-custom">
+          <i class="fas fa-edit me-2"></i>Editar Proveedores
+        </a>
+        <a routerLink="/elimiprov" class="btn btn-custom">
+          <i class="fas fa-trash me-2"></i>Eliminar Proveedores
+        </a>
+      </div>
+
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="alert alert-danger d-flex align-items-center" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        <span>Error: {{ errorMessage }}</span>
+      </div>
+
+      <!-- Mensaje de info si no hay proveedores -->
+      <div *ngIf="!errorMessage && proveedores.length === 0" class="alert alert-info d-flex align-items-center" role="alert">
+        <i class="fas fa-info-circle me-2"></i>
+        <span>No hay proveedores disponibles.</span>
+      </div>
+
+      <!-- Tabla de proveedores -->
+      <div *ngIf="proveedores.length > 0" class="table-responsive mt-3">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Cédula</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let proveedor of proveedores">
+              <td>{{ proveedor.id }}</td>
+              <td>{{ proveedor.nombre }}</td>
+              <td><i class="fas fa-phone me-2"></i>{{ proveedor.telefono }}</td>
+              <td><i class="fas fa-map-marker-alt me-2"></i>{{ proveedor.direccion }}</td>
+              <td><i class="fas fa-id-card me-2"></i>{{ proveedor.cedula }}</td>
+              <td><i class="fas fa-tag me-2"></i>{{ proveedor.tipo }}</td>
+              <td>{{ proveedor.descripcion || 'No disponible' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

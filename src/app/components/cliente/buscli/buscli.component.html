@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Buscar Cliente por ID</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="buscarCliente()">
+            <div class="mb-3">
+              <label for="clienteId" class="form-label">ID del Cliente:</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="clienteId" [(ngModel)]="clienteId" name="clienteId" required>
+                <button type="submit" class="btn btn-custom">Buscar</button>
+              </div>
+            </div>
+          </form>
+
+          <div *ngIf="cliente" class="mt-4">
+            <h3 class="mb-3">Detalles del Cliente</h3>
+            <div class="cliente-details">
+              <p><strong>ID:</strong> {{ cliente.id }}</p>
+              <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+              <p><strong>Apellido:</strong> {{ cliente.apellido }}</p>
+              <!-- Agrega otros campos según sea necesario -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

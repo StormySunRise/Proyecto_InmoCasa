@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fff59d;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #1b3039 !important;
+  color: #eceff1 !important;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #1b3039;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #1b3039;
+  box-shadow: 0 0 0 0.2rem rgba(27, 48, 57, 0.25);
+}
+
+.btn-custom {
+  background-color: #1b3039;
+  color: #eceff1;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s;
+  padding: 10px 20px;
+}
+
+.btn-custom:hover {
+  background-color: #eceff1;
+  color: #1b3039;
+  transform: scale(1.05);
+}
+
+.form-check-input:checked {
+  background-color: #1b3039;
+  border-color: #1b3039;
+}

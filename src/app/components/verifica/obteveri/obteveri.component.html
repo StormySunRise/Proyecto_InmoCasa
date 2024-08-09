@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Verificaciones de Factura</h2>
+  
+  <div class="d-flex justify-content-center mb-4 flex-wrap">
+    <a routerLink="/verifica" class="btn btn-custom me-2 mb-2">Agregar Verificación</a>
+    <a routerLink="/busveri" class="btn btn-custom mb-2">Buscar por Id</a>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ID de Factura</th>
+          <th>Fecha de Verificación</th>
+          <th>Resultado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let verificacion of verificaciones">
+          <td>{{ verificacion.id }}</td>
+          <td>
+            <ng-container *ngIf="verificacion.id !== editVerificacionId; else editFacturaId">
+              {{ verificacion.facturaId }}
+            </ng-container>
+            <ng-template #editFacturaId>
+              <input [(ngModel)]="verificacion.facturaId" class="form-control">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="verificacion.id !== editVerificacionId; else editFechaVerificacion">
+              {{ verificacion.fechaVerificacion | date }}
+            </ng-container>
+            <ng-template #editFechaVerificacion>
+              <input [(ngModel)]="verificacion.fechaVerificacion" type="date" class="form-control">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="verificacion.id !== editVerificacionId; else editResultado">
+              {{ verificacion.resultado }}
+            </ng-container>
+            <ng-template #editResultado>
+              <input [(ngModel)]="verificacion.resultado" class="form-control">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="verificacion.id !== editVerificacionId; else editActions">
+              <button *ngIf="verificacion.id !== undefined" class="btn btn-warning me-2" (click)="startEditing(verificacion.id)">Editar</button>
+              <button *ngIf="verificacion.id !== undefined" class="btn btn-danger" (click)="deleteVerificacion(verificacion.id)">Eliminar</button>
+            </ng-container>
+            <ng-template #editActions>
+              <button class="btn btn-success me-2" (click)="saveEdit(verificacion)">Guardar</button>
+              <button class="btn btn-secondary" (click)="cancelEditing()">Cancelar</button>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

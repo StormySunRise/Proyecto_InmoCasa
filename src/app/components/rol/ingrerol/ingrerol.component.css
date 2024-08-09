@@ -1,0 +1,80 @@
+/* Estilo para el contenedor */
+.container {
+  max-width: 1200px; /* Reduce el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 20px; /* Agrega padding alrededor del contenedor */
+}
+
+/* Estilo para la tarjeta principal */
+.card.main-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #eceff1;
+}
+
+/* Estilo para el encabezado de la tarjeta */
+.card-header {
+  background-color: #1b3039;
+  color: #eceff1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 1rem;
+}
+
+/* Tamaño y peso del texto en el encabezado */
+.card-header h3 {
+  font-size: 1.5rem; /* Ajusta el tamaño del encabezado */
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+/* Estilo para el cuerpo de la tarjeta */
+.card-body {
+  padding: 1rem; /* Ajusta el padding para el cuerpo de la tarjeta */
+}
+
+/* Estilo para el grupo de formularios */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Estilo para las etiquetas del formulario */
+.form-label {
+  font-weight: 600;
+  color: #1b3039; /* Color del texto */
+}
+
+/* Estilo para los controles del formulario */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  font-size: 1rem;
+  box-shadow: none;
+}
+
+/* Estilo para los botones personalizados */
+.btn-custom {
+  background-color: #1b3039;
+  border-color: #1b3039;
+  color: #eceff1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+/* Estilo para las alertas */
+.alert {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem; /* Ajusta el tamaño del texto */
+}
+
+.alert i {
+  margin-right: 0.5rem;
+}

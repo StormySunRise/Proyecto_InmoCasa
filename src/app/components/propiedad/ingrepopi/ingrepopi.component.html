@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0 text-center">Ingresar Propiedad</h2>
+        </div>
+        <div class="card-body">
+          <!-- Mensaje de éxito o error -->
+          <div *ngIf="mensaje" class="alert" [ngClass]="{'alert-success': mensaje.tipo === 'success', 'alert-danger': mensaje.tipo === 'error'}">
+            {{ mensaje.texto }}
+          </div>
+
+          <!-- Formulario para ingresar nueva propiedad -->
+          <form (ngSubmit)="agregarPropiedad()" #propiedadForm="ngForm">
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección:</label>
+              <input type="text" id="direccion" name="direccion" class="form-control" [(ngModel)]="propiedad.direccion" required>
+            </div>
+            <div class="mb-3">
+              <label for="ciudad" class="form-label">Ciudad:</label>
+              <input type="text" id="ciudad" name="ciudad" class="form-control" [(ngModel)]="propiedad.ciudad" required>
+            </div>
+            <div class="mb-3">
+              <label for="tipo" class="form-label">Tipo:</label>
+              <input type="text" id="tipo" name="tipo" class="form-control" [(ngModel)]="propiedad.tipo" required>
+            </div>
+            <div class="mb-3">
+              <label for="precio" class="form-label">Precio:</label>
+              <input type="number" id="precio" name="precio" class="form-control" [(ngModel)]="propiedad.precio" required>
+            </div>
+            <div class="mb-3">
+              <label for="propietarioId" class="form-label">Propietario ID:</label>
+              <input type="number" id="propietarioId" name="propietarioId" class="form-control" [(ngModel)]="propiedad.propietarioId" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" id="disponible" name="disponible" class="form-check-input" [(ngModel)]="propiedad.disponible">
+              <label for="disponible" class="form-check-label">Disponible</label>
+            </div>
+            <div class="mb-4 form-check">
+              <input type="checkbox" id="seleccionada" name="seleccionada" class="form-check-input" [(ngModel)]="propiedad.seleccionada">
+              <label for="seleccionada" class="form-check-label">Seleccionada</label>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-custom">Agregar Propiedad</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

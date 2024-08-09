@@ -1,0 +1,61 @@
+<h2>Crear Nuevo Usuario</h2>
+
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id">ID:</label>
+    <input type="number" id="id" formControlName="id">
+    <div *ngIf="usuarioForm.get('id')?.invalid && usuarioForm.get('id')?.touched">
+      El ID es requerido.
+    </div>
+  </div>
+
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre">
+    <div *ngIf="usuarioForm.get('nombre')?.invalid && usuarioForm.get('nombre')?.touched">
+      El nombre es requerido.
+    </div>
+  </div>
+
+  <div>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" formControlName="apellido">
+    <div *ngIf="usuarioForm.get('apellido')?.invalid && usuarioForm.get('apellido')?.touched">
+      El apellido es requerido.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="usuarioForm.get('email')?.invalid && usuarioForm.get('email')?.touched">
+      Ingrese un email válido.
+    </div>
+  </div>
+
+  <div>
+    <label for="cedula">Cédula:</label>
+    <input type="text" id="cedula" formControlName="cedula">
+    <div *ngIf="usuarioForm.get('cedula')?.invalid && usuarioForm.get('cedula')?.touched">
+      La cédula es requerida.
+    </div>
+  </div>
+
+  <div>
+    <label for="passwordHash">Contraseña:</label>
+    <input type="password" id="passwordHash" formControlName="passwordHash">
+    <div *ngIf="usuarioForm.get('passwordHash')?.invalid && usuarioForm.get('passwordHash')?.touched">
+      La contraseña debe tener al menos 6 caracteres.
+    </div>
+  </div>
+
+  <div>
+    <label for="rolId">ID del Rol:</label>
+    <input type="number" id="rolId" formControlName="rolId">
+    <div *ngIf="usuarioForm.get('rolId')?.invalid && usuarioForm.get('rolId')?.touched">
+      El ID del rol es requerido.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!usuarioForm.valid">Crear Usuario</button>
+</form>

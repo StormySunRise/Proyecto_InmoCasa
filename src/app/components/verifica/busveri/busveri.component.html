@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Buscar Verificación por ID</h2>
+    <div class="form-group">
+      <label for="verificacionId">ID de Verificación</label>
+      <input type="number" id="verificacionId" class="form-control" [(ngModel)]="id" placeholder="Ingrese el ID" />
+    </div>
+    <button class="btn btn-primary mt-2" (click)="buscarPorId()">Buscar</button>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  
+    <div *ngIf="verificacion" class="mt-4">
+      <h3>Detalles de la Verificación</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>ID de Factura</th>
+            <th>Fecha de Verificación</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ verificacion.id }}</td>
+            <td>{{ verificacion.facturaId }}</td>
+            <td>{{ verificacion.fechaVerificacion | date }}</td>
+            <td>{{ verificacion.resultado }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
